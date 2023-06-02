@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
   template: `
-    <kendo-chart [title]="{ text: 'Charge current vs. charge time' }">
+    <kendo-chart [zoomable]="true" [title]="{ text: 'Charge current vs. charge time' }">
 
     
       <kendo-chart-series>
@@ -21,12 +21,17 @@ import { Component } from '@angular/core';
           <kendo-chart-x-axis-item [title]="{ text: 'Time' }"
                                    [labels]="{ format: '{0}m' }"
                                    [max]="90">
-              <kendo-chart-x-axis-item-labels [step]="8">
+              <kendo-chart-x-axis-item-labels [step]="0.0000000001">
               </kendo-chart-x-axis-item-labels>         
           </kendo-chart-x-axis-item>
       </kendo-chart-x-axis>
 
 
+      <kendo-chart-category-axis>
+      <kendo-chart-category-axis-item
+      >
+      </kendo-chart-category-axis-item>
+    </kendo-chart-category-axis>
 
       <kendo-chart-y-axis>
           <kendo-chart-y-axis-item [title]="{ text: 'Charge' }"
